@@ -83,7 +83,7 @@ rm.combo.WLRmax<- function(time        = NULL,
     
     pval.adjusted <- p.adjust(p.unadjusted, method = adjust.methods)
     pval <- min(pval.adjusted)
-    max.index <- which(p.unadjusted == min(p.unadjusted), arr.ind = TRUE)
+    max.index <- which.min(p.unadjusted)
     
   }
   
@@ -170,7 +170,7 @@ rm.combo.WLRmax<- function(time        = NULL,
                                        algorithm= GenzBretz(maxpts=50000,abseps=0.00001))[1]}
     
     p.unadjusted <- stats::pnorm(q=tst.rslt1$Z)
-    max.index <- which(p.unadjusted == min(p.unadjusted), arr.ind = TRUE)
+    max.index <- which.min(p.unadjusted)
     #max.index <- which(abs(Z.tst.rslt1) == max(abs(Z.tst.rslt1)), arr.ind = TRUE) 
     
   }
